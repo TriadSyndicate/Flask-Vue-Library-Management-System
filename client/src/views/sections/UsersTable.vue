@@ -72,7 +72,7 @@
 
 </template>
 <script>
-import MainChart from '../../components/charts/MainChart.vue';
+import MainChart from '@/components/charts/MainChart.vue';
 export default {
 }
 </script>

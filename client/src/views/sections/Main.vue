@@ -236,8 +236,8 @@
 </template>
 <script>
 import Card from "@/components/Card.vue";
-import MainChart from "../../components/charts/MainChart.vue";
-import AddMember from "../modals/AddMember.vue";
+import MainChart from "@/components/charts/MainChart.vue";
+import AddMember from "@/modals/AddMember.vue";
 export default {
   components: {
     Card,
