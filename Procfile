@@ -1,2 +1,2 @@
 web: gunicorn server.app:app
-web: cd client && npm run start
+web: cd client && npm run build && npm run start
