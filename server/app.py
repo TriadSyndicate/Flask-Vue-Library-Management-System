@@ -240,6 +240,6 @@ def get_transactions():
 
 
 if __name__ == '__main__':
-	app.run(debug=False)
+	app.run(threaded=True, port=5000, debug=False)
 	
  
