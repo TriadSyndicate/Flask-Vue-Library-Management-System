@@ -237,7 +237,7 @@
 <script>
 import Card from "@/components/Card.vue";
 import MainChart from "@/components/charts/MainChart.vue";
-import AddMember from "@/modals/AddMember.vue";
+import AddMember from "@/views/modals/AddMember.vue";
 export default {
   components: {
     Card,
