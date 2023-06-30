@@ -2,7 +2,7 @@
     <div class="relative">  
       <Navbar/>
       <AsideBar/>
-      <div class="absolute top-7 right-0 left-0 bottom-0 bg-white border-gray-200 dark:bg-gray-900">
+      <div id="slot-section" class="absolute top-7 right-0 left-0 bottom-0 bg-white border-gray-200 dark:bg-gray-900">
          <slot/>
       </div>
       

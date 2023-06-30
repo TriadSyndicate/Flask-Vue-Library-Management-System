@@ -31,6 +31,11 @@ const routes = [
                 path:'users',
                 name:'Users',
                 component: () => import('../views/sections/UsersTable.vue')
+            },
+            {
+                path:'books',
+                name:'Books',
+                component: () => import('../views/sections/BooksTable.vue')
             }
         ]
     },
