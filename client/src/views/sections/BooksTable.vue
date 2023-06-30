@@ -160,7 +160,11 @@
                 </div>
                 <div>
                     <label for="book_author" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Author</label>
-                    <input type="text" name="book_author" id="book_author" v-model="author" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"  placeholder="Type Book name" required="">
+                    <input type="text" name="book_author" id="book_author" v-model="author" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"  placeholder="Type Book Author" required="">
+                </div>
+                <div>
+                    <label for="book_year" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Year</label>
+                    <input type="text" name="book_year" id="book_year" v-model="year" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"  placeholder="1990" required="">
                 </div>
             <div class="bottom-0 left-0 flex justify-center w-full pb-4 space-x-4 md:px-4 md:absolute">
                 <button type="submit" class="text-white w-full justify-center bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
@@ -196,6 +200,7 @@ export default {
             genre:'',
             quantity:'',
             author:'',
+            year:'',
             bookGenres: [
                 "Fiction",
                 "Non-fiction",
@@ -256,6 +261,9 @@ export default {
         },
         deleteBookModal(id) {
             document.getElementById(`deleteBook-${id}`).showModal();
+        },
+        created_book(){
+
         }
     },
     computed: {
