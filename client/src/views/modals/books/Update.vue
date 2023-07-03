@@ -103,6 +103,8 @@ export default {
         closeModal() {
             document.getElementById(this.dialogId).close()
         }
+    },
+    mounted(){
     }
 }
 </script>

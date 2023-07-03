@@ -167,7 +167,7 @@
                     <input type="text" name="book_year" id="book_year" v-model="year" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"  placeholder="1990" required="">
                 </div>
             <div class="bottom-0 left-0 flex justify-center w-full pb-4 space-x-4 md:px-4 md:absolute">
-                <button type="submit" class="text-white w-full justify-center bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                <button @click="created_book" type="button" class="text-white w-full justify-center bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
                     Add Book
                 </button>
                 <button type="button" data-drawer-dismiss="drawer-create-product-default" aria-controls="drawer-create-product-default" class="inline-flex w-full justify-center text-gray-500 items-center bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-primary-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">
@@ -263,7 +263,25 @@ export default {
             document.getElementById(`deleteBook-${id}`).showModal();
         },
         created_book(){
-
+            // Ajax Post Call to Backend
+            this.$http.post(`${BACKEND_URL}/api/v1/books`, {
+                title: this.title,
+                author: this.author,
+                genre: this.genre,
+                quantity: this.quantity,
+                year: this.year
+            }).then((response) => {
+                console.log(response)
+                this.getBooksData()
+                this.title = ''
+                this.genre = ''
+                this.quantity = ''
+                this.author = ''
+                this.year = ''
+                window.location.reload()
+            }).catch((error) => {
+                console.log(error)
+            })
         }
     },
     computed: {
